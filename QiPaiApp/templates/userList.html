@@ -1,0 +1,11 @@
+<div class="userList flexBox flexBox_column" id="userList">
+	<section class="userList_content flex" id="">
+		<!--相册列表-->
+		<ul class="userList_all" id="userList_photo">
+			<li v-for="item in items" class="border_box float_left flexBox " data-UserID="{{item.UserID}}" v-on:click="GoIndex">
+				<img v-bind:src="item.CoverImage"/>
+				<p>{{item.Nickname}}</p>
+			</li>
+		</ul>
+	</section>
+</div>

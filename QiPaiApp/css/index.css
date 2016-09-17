@@ -1,0 +1,145 @@
+
+.m-index{
+	width: 100%;
+	height: 100%;
+}
+.m-index footer{
+	padding: 0.05rem;
+	background: #fff;
+	z-index: 9;
+}
+.m-index footer .btn{
+	display: block;
+	height: 100%;
+	line-height: 0.4rem;
+	color: #fff;
+	background: rgb(255,0,102);
+	width: 100%;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+/*头像*/
+.show_header{
+
+	width: 100%;
+	height:1.04rem ;
+	padding:0.15rem;
+	border-bottom: 0.01rem solid #ddd;
+
+}
+.show_header img{
+	height: 0.74rem;
+	width:0.74rem;
+}
+/*个人信息*/
+
+.person_information>p{
+	height: 0.185rem;
+	line-height:0.185rem;
+	text-align: center;
+	position: relative;
+	font-size: 0.13rem;
+}
+.person_information>p span{position: absolute;top: 0;padding: 0 10px;}
+.person_information>p span:nth-child(1){
+	left:0.05rem ;
+}
+.person_information>p span:nth-child(2){
+	left:0.65rem ;
+}
+.person_information>p span:nth-child(3){
+	left:1.25rem;
+}
+#person_information_three>span:nth-child(1){
+	left: 0.04rem;
+}
+/*相册标题*/
+.photos_title{
+	height: 0.3rem;
+	line-height: 0.3rem;
+	width: 100%;
+}
+#photos_title_left{
+	flex:4;
+	-webkit-flex: 4;
+	-webkit-box-flex: 4;
+}
+#photos_title_left .swiper-slide{
+	text-align: center;
+	width: 50%;
+}
+
+
+#photos_title_right{
+	text-align: center;
+}
+/*模特资料*/
+.model_data{
+	width: 100%;
+	border-top: 0.01rem solid #ddd;
+	padding: 0 0.15rem;
+}
+.model_data_title{
+	color: #FF559D;
+	font-size: 0.14rem;
+	line-height: 0.3rem;
+	height: 0.3rem;
+}
+.model_data_common_list{
+	font-size: 0.13rem;
+	line-height: 0.3rem;
+	/*height: 0.3rem;*/
+}
+.model_data_common_list span{
+	flex: 1;
+	-webkit-flex:1;
+	-webkit-box-flex: 1;
+	display: block;
+}
+.work_experience{
+	width: 100%;
+	 padding-bottom: 0.14rem;
+}
+.work_experience_information{
+	font-size: 0.13rem;
+	width: 100%;
+	line-height: 0.2rem;
+	/*省略号*/
+	display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+}
+/*个人视频*/
+#video_swiper video{
+	width: 100%;
+	height: auto;
+}
+#video_swiper div{
+	text-align: center;
+}
+
+#photos_list{
+	height: 2.46rem;
+}
+#photos_list .swiper-slide{
+	width: 48%!important;
+	overflow: hidden!important;
+	float: left!important;
+	margin-left: 5px!important;
+	height: 240px!important;
+	position: relative!important;
+}
+#photos_list .swiper-slide img{
+	position: absolute!important;
+	left:50%!important;
+	top:50%!important;
+	transform: translate(-50%,-50%)!important;
+	-webkit-transform: translate(-50%,-50%)!important;
+	-moz-transform: translate(-50%,-50%)!important;
+	-ms-transform: translate(-50%,-50%)!important;
+	-o-transform: translate(-50%,-50%)!important;
+	vertical-align: bottom!important;
+}

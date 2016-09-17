@@ -1,0 +1,105 @@
+<div class="m-index flexBox flexBox_column">
+	<header class="header">
+			<span class="icon iconfont goback" v-on:click="GoUserList">&#xe600;</span>
+			个人信息
+	</header>
+	<section id="iscroll_start" class="flex section">
+		<!--头像信息-->
+		<div class="show_header flexBox_row border_box flexBox">
+			<img v-bind:src="userHeader" />
+			<div class="person_information flex">
+				<p class="person_information_one">
+					<span class="person_information_name">{{userName}}</span>
+					<span></span>
+					<span class="person_information_level">{{Level||'白金'}}</span>
+				</p>
+				<p class="person_information_role">
+					<span v-for="tag in IdentityTag">{{tag}}</span>
+				</p>
+				<p class="person_information_three" id="person_information_three">
+					<span>{{Height+'cm'}}</span>
+					<span>{{Weight+'kg'}}</span>
+					<span>{{Bust}}-{{Waistline}}-{{Hips}}</span>
+				</p>
+				<p class="person_information_four">
+					<span>{{Household||'深圳'}}</span>
+				</p>
+			</div>
+		</div>
+
+		<!--相册-->
+	<div class="photos_title flexBox_row flexBox">
+		<div class="swiper-container " id="photos_title_left">
+			<div class="swiper-wrapper" id="photosAll-swiper">
+				<!-- <div class="swiper-slide" >相册标题</div> -->
+			</div>
+		</div>
+		<div id="photos_title_right" class="flex" v-on:click="MorePhotos">更多</div>
+	</div>
+
+	<!--相册展示-->
+	<div class="photos_list_box">
+		<div class="swiper-container" id="photos_list">
+			<div class="swiper-wrapper" id="swiper-wrapper-xiangce" >
+					<!-- <div class="swiper-slide"><img src="" alt="" /></div> -->
+			</div>
+			<!--<div class="swiper-pagination"></div>-->
+		</div>
+	</div>
+	<!--模特卡资料-->
+
+		<div class="model_data border_box">
+			<h1 class="model_data_title">个人简介</h1>
+			<div class="work_experience">
+				<p class="work_experience_information">{{Introduction}}</p>
+			</div>
+
+		</div>
+		<div class="model_data border_box">
+			<h1 class="model_data_title">技能特长</h1>
+			<div class="work_experience">
+					<p class="work_experience_information">{{Specialty}}</p>
+			</div>
+		</div>
+		<div class="model_data border_box">
+			<h1 class="model_data_title">荣誉经历</h1>
+			<div class="work_experience">
+					<p  class="work_experience_information">{{Honor}}</p>
+			</div>
+		</div>
+
+		<div class="model_data border_box">
+			<h1 class="model_data_title">工作经验</h1>
+			<div class="work_experience" >
+				<!--{{WorkExperience}}-->
+				<p v-for="works in newWorkExperience">{{works}}</p>
+			</div>
+
+		</div>
+		<div class="model_data border_box">
+			<h1 class="model_data_title">个人视频</h1>
+			<div class="work_experience">
+				<div class="swiper-container" id="video_swiper">
+					<div class="swiper-wrapper">
+						<!-- <div class="swiper-slide">
+							<video src="{{}}" autoplay poster="{{Thumbnail}}">
+
+							</video>
+						</div> -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!--最后-->
+		<div class="weui-infinite-scroll" id="onload_index">
+		  <div class="infinite-preloader"></div> 
+			  正在加载... 
+		</div>
+	</section>
+	<footer class="footerBtn border_box" v-on:click="GoBook" >
+		<span class="btn">工作预约</span>
+	</footer>
+
+</div>

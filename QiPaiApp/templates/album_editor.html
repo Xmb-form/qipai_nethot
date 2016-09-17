@@ -1,0 +1,20 @@
+<div class="album flexBox_column flexBox" id="album_editor">
+	<header class="header">
+		<span class="icon iconfont goback" v-on:click="Close_album_main">&#xe600;</span>
+		<span class="besure" v-on:click="newAlbum">新增</span> 相册编辑
+	</header>
+	<section class="section flex">
+		<ul id="album_main_ul" class="section">
+			<li v-for="pic in albumArry" data-AlbumsID="{{pic.AlbumsID}}">
+				<img v-bind:src="pic.PhotoPath" v-on:click="go_photos_editor" />
+				<p class="border_box flexBox">
+					<span class="flex">{{pic.AlbumsName}}</span>
+					<span class="icon iconfont flex editor_album" v-on:click="editor_album">&#xe60a;</span>
+					<span class="icon iconfont flex delete_album" v-on:click="delete_album">&#xe608;</span>
+				</p>
+			</li>
+		</ul>
+
+	</section>
+
+</div>

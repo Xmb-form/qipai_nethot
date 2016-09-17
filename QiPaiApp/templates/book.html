@@ -1,0 +1,131 @@
+<div class="book flexBox flexBox_column" id="book">
+	<header class="header">
+		<span class="icon iconfont goback" v-on:click="GoIndex">&#xe600;</span>
+		网红订单
+	</header>
+	<section>
+		<div class="show_header flexBox_row border_box flexBox flex">
+			<img class="user_header_txt tap" v-bind:src="userHeader" />
+			<div class="person_information flex">
+				<p class="person_information_one">
+					<span class="person_information_name">{{userName}}</span>
+					<span></span>
+					<span class="person_information_level">{{Level||'白金'}}</span>
+				</p>
+				<p class="person_information_role flexBox">
+					<span v-for="tag in IdentityTag" class="nomal flex">{{tag}}</span>
+				</p>
+				<p class="person_information_three">
+					<span>{{Height+'cm'}}</span>
+					<span>{{Weight+'kg'}}</span>
+					<span>{{Bust}}-{{Waistline}}-{{Hips}}</span>
+				</p>
+				<p class="person_information_four">
+					<span>{{Household||'深圳'}}</span>
+				</p>
+			</div>
+		</div>
+	</section>
+
+		
+	<!--网红信息卡-->
+	<!--<div class="per_user">
+		<p class="per_user_head">		</p>
+		<div class="user_header ">
+			<img src="images/user_head.jpg" />
+		</div>
+		<div>
+			<p class="per_user_name"">Jonas Jacobsson</p>
+			<p class="per_user_job">职业标签：<span>模特</span></p>
+			<p class="per_user_loc"">中国.深圳</p>
+		</div>
+		<div class="per_user_detail">
+			<p class=" flexBox flexBox_row">
+				<span>身高</span><span>体重</span><span>三围</span>
+			</p>
+			<p class=" flexBox flexBox_row">
+				<span>198cm</span><span>65kg</span><span>95-87-99</span>
+			</p>
+		</div>
+	</div>-->
+	
+	
+	<section class="section person_custom flex">
+		<p class="info">直播信息</p>
+		<h1 class="filming_loc_head class="info"">定制信息</h1>
+		<p class="book_money class="info"">
+			<span class="book_money_head">直播单价</span>
+			<span class="book_money_price">¥&nbsp;{{Lastprices}}/小时</span>
+		</p>
+		<div class="info" >
+			<p><span>直播平台</span></p>
+			
+		</div>
+		<p class="flexBox player"  id="playerId">
+			<span class="border_box active" v-on:click="choose_player">爱奇艺</span>
+			<span class="border_box" v-on:click="choose_player">优酷</span>
+			<span class="border_box" v-on:click="choose_player">映客</span>
+			<span class="border_box" v-on:click="choose_player">斗鱼</span>
+			<span class="border_box" v-on:click="choose_player">陌陌</span>
+			
+		</p>
+		<!--<input type="text" id="playerId" />-->
+		
+		<!--直播平台-->
+		<!--<div class="plateform_title flexBox_row flexBox">
+			<div class="swiper-container " id="plateform_title_left">
+				<div class="swiper-wrapper" id="plateformAll-swiper">
+					 <div class="swiper-slide" >直播平台名字</div> 
+					
+				</div>
+			</div>
+		</div>-->
+		<!--<p class="flexBox_row flexBox">-->
+			<!--<span>开始时间</span>-->
+			<!--<span id="beginyear" v-on:click="choose_beginTime"><input type="text" id='datetime-begin'/></span>
+			<span id="begintime" v-on:click="choose_endTime"><input type="text" id='datetime-end'/></span>-->
+			
+			
+			<div class="checkTime_begin flexBox flexBox_row">
+				<span>开始时间</span>
+		        <input class="weui_input input_flex" for="begintime" id="begintime" type="text" placeholder="请选择开始时间" 08:00">
+		     </div>
+		     <div class="checkTime_begin flexBox flexBox_row">
+				<span>结束时间</span>
+		        <input class="weui_input input_flex" id="datetime-end" type="text" placeholder="请选择结束时间" readonly="">
+		     </div>
+		     
+		<!--</p>-->
+		<!--<p class="flexBox_row flexBox">
+			<span>结束时间</span>
+			<span id="endyear"></span>
+			<span id="endtime"></span>
+		</p>-->
+			<h1 class="filming_loc_h1">指定拍摄地点：</h1>
+			<span id="check_select" >
+				<i class="weui_icon_success_circle" v-on:click="select_yes"></i>
+				<span style="padding: 0 10px">是</span>
+				<i class="weui_icon_circle" v-on:click="select_no"></i>
+				<span >否</span>
+			</span>
+			
+			
+
+		<input class="filming_remark" id="address" type="text" placeholder="请输入地址" size=""  />
+		<h1>备注信息</h1>
+		<input class="filming_remark" type="text" placeholder="请输入备注" size="" id="beizhu"/>
+		<div class="person_custom_stats">
+			<p>您的费用统计</p>
+			<p>1、直播费用&nbsp;&nbsp;{{Lastprices}}元/小时&nbsp;*&nbsp;<span class="font_red">{{totalHours}}</span>小时&nbsp;&nbsp;总共<span class="font_red">{{totalMoney}}</span>元</p>
+			<p>2、指定地点拍摄，需按实际支付差旅费</p>
+			<p>3、店铺转化率，需按实际情况收取费用</p>
+		</div>
+		<div class="person_custom_Btn" v-on:click="besue_last">确认提交</div>
+	</section>
+	
+	<a href="tel:075526609142"><footer class="footerBtn border_box" >
+		<span class="btn">联系客服0755-26609142</span>
+	</footer>
+	</a>
+	
+</div>

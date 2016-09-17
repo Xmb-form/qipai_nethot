@@ -1,0 +1,110 @@
+<div class="information flexBox flexBox_column" id="information">
+	<header class="header">
+		<span class="goback icon iconfont" v-on:click="Go_editor">&#xe600;</span>
+		基本信息
+		<span class="besure" v-on:click="information_sure">确定</span>
+	</header>
+	<section class="section flex flexBox_column">
+		<!--选择头像-->
+		<div class="information_data user_header border_box flexBox flexBox_row" v-on:click="choose_img" id="getUrl">
+			<!--<a href="js-call://getUrl" id="choose_img_btn" ></a>-->
+			<div class="user_header_txt tap flex">
+				头像
+			</div>
+			<img v-bind:src="imgUrl" id="uploadHeader"/>
+			<span class="icon iconfont" style="line-height: 1rem;width: 0.44rem;text-align: center;color: #C4C4C4;">&#xe601;</span>
+		</div>
+
+		<!--昵称-->
+		<div class="information_data border_box flexBox flexBox_row tap" v-on:click="choose_name">
+
+			    <h1>昵称</h1>
+			<span class=" icon iconfont mark_right">&#xe601;</span>
+			<div class="userName_txt" id="userName_txt">{{userName}}</div>
+      	</div>
+		<!--职业标签-->
+		<div class="information_data border_box flexBox flexBox_row tap" v-on:click="choose_biaoqian" style="border: none;">
+
+			<h1>职业标签</h1>
+			<span class=" icon iconfont mark_right">&#xe601;</span>
+		</div>
+		<div class="biaoqian_data flexBox flexBox_row" id="newBiaoQian">
+			<span v-for="ospan in aChecked" class="flex">{{ospan}}</span>
+			<div id="oldBiaoQian" class="flexBox">
+				<span v-for="oldspan in IdentityTag" class="flex">{{oldspan}}</span>
+			</div>
+			
+		</div>
+		
+		
+
+
+
+		<div class="information_data border_box flexBox flexBox_row tap" style="border-top: 0.005rem solid #ddd;">
+
+        	<h1>身高</h1>
+	         <input class="weui_input choose_input" id="user_offheight" type="text" value="" readonly="" data-values="">
+	         <span class="icon iconfont mark_right">&#xe601;</span>
+	         <div class="oldData oldData_height" id="edit_Height">
+	         	{{oheight+'cm'}}
+	         </div>
+      	</div>
+
+      	<div class="information_data border_box flexBox flexBox_row tap">
+
+        	<span>体重</span>
+	        <input class="weui_input choose_input" id="user_offweight" type="text" value="" readonly="">
+	        <span class=" icon iconfont mark_right">&#xe601;</span>
+	         <div class="oldData oldData_weight" id="edit_Weight">
+	         	{{userWeight+'kg'}}
+	         </div>
+      	</div>
+		<div class="information_data border_box flexBox flexBox_row tap">
+
+        	<span>三围</span>
+	        <input class="weui_input choose_input" id="user_offsanwei" type="text" value="" readonly="">
+	        <span class=" icon iconfont mark_right">&#xe601;</span>
+	         <div class="oldData oldData_sanwei ">
+	         	<span id="edit_Bust">{{oBust}}-</span>
+	         	<span id="edit_Waistline">{{oWaistline}}-</span>
+	         	<span id="edit_Hips">{{oHips}}</span>
+	         </div>
+      	</div>
+
+      	<!--居住地-->
+      	<div class="information_data border_box flexBox flexBox_row tap">
+
+        	<span>地址</span>
+	        <input class="weui_input choose_input" id="user_city" type="text" value="" readonly="">
+	        <span class=" icon iconfont mark_right">&#xe601;</span>
+	         <div class="oldData oldData_city" id="edit_city">
+	         	{{oldCity}}
+	         </div>
+      	</div>
+
+		<!--打开选择标签页面-->
+		<div id="biaoqian" class="weui-popup-container">
+		  <div class="weui-popup-overlay"></div>
+		  <div class="weui-popup-modal">
+		  	<div class="biaoqian_content flexBox flexBox_column">
+		  		<header class="header">
+		  			<span class="goback icon iconfont" v-on:click="NotSure">&#xe600;</span>
+		  			职业标签
+		  			<span class="besure" v-on:click="BeSure_BiaoQian">确定</span>
+		  		</header>
+		  		<section>
+		  			<span class="border_box">演员</span>
+		  			<span class="border_box">主持人</span>
+		  			<span  class="border_box">模特</span>
+		  			<!--<span  class="border_box">教师</span>-->
+		  			<!--<span  class="border_box">职员</span>-->
+		  			<!--<span  class="border_box">公务员</span>-->
+		  			<!--<span  class="border_box">自由职业</span>-->
+		  			<span  class="border_box">网红</span>
+		  		</section>
+		  	</div>
+
+		  </div>
+		</div>
+	</section>
+</div>

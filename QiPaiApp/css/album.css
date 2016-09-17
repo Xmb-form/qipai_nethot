@@ -1,0 +1,51 @@
+.album{
+	width: 100%;
+}
+.album .album_content{
+	flex: 1;
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	width: 100%;
+	overflow: auto;
+}
+.album_all{
+	width: 100%;
+	height: 100%;
+	clear: both;
+	padding-left:0.05rem;
+
+}
+.album_all li{
+	width: calc(33.333% - 0.05rem);
+	position: relative;
+	margin-right: 0.025rem;
+	margin-top: 0.05rem;
+	border: 0.01rem solid #ddd;
+	text-align: center;
+	font-size: 0.5rem;
+	
+}
+.album_all li span{
+	font-size: 0.6rem;
+	color: #ddd;
+}
+.album_all li img{
+	width: 100%;
+	display: block;
+}
+.album_all li p{
+	height: 0.2rem;
+	text-align: center;
+	font-size: 0.12rem;
+	line-height: 0.2rem;
+	width:100% ;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    position: absolute;
+    bottom: 0;
+    color: #ccc;
+    background: rgba(0,0,0,0.7);
+
+}

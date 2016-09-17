@@ -1,0 +1,28 @@
+<div class="album_photo flexBox_column flexBox" id="album_photo">
+	<header class="header">
+		<span class="icon iconfont goback" v-on:click="GoAlbumEditor">&#xe600;</span>
+		相片编辑
+	<!--	<span class="besure" v-on:click="addphotos_besure">确定</span>-->
+	</header>
+	<!--下拉刷新-->
+	<section class="album_photo_content flex section" id="">
+		<!--相册列表-->
+		
+		<ul class="album_photo_all" id="edit_photos">
+			<!--加号-->
+			<li class="border_box float_left" v-on:click="addphotos">
+				<span class="iconfont addphotos">
+					&#xe602;
+				</span>
+			</li>
+			<!--列表-->
+			<li class="border_box float_left" data-photosID = "{{item.PhotoID}}" v-for="item in items">
+				<img v-bind:src="item.PhotoPath||'images/nnn.jpg'"/>
+				<p><span class="icon iconfont delete_photos" v-on:click="delete_photos">&#xe608;</span></p>
+			</li>
+			
+		</ul>
+
+	</section>
+
+</div>

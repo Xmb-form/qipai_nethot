@@ -1,0 +1,208 @@
+<div class="editor flexBox flexBox_column" id="editor">
+	<header class="header">
+		<span class="icon iconfont tap goback" v-on:click="GoBack">&#xe600;</span>
+		网红资料
+		<!--<span class="besure">确定</span>-->
+	</header>
+	<section class="editor_content section flex">
+		<div class="editor_data border_box" style="border: none;" v-on:click="Go_information">
+			<h1 class="editor_data_title" style="height: 0.24rem;">基本信息<span>编辑</span></h1>
+			<!--头像信息-->
+			<div class="show_header flexBox border_box flexBox_row" data-userID="{{oUserId}}" id="data_userId">
+				<img v-bind:src="oUserImg" />
+				<div class="person_information">
+					<p class="person_information_one">
+						<span class="person_information_name">{{oUserName}}</span>
+						<span></span>			
+						<span class="person_information_level">{{Level||'白金'}}</span>
+					</p>
+					<p class="person_information_role flexBox">
+						<span v-for="tag in IdentityTag" class="flex" style="position: initial;padding-left: 0.15rem;padding-right: 0;text-align: left;">{{tag}}</span>
+					</p>
+					<p class="person_information_three" id="information_three_editor">
+						<span>{{oHeight+'cm'}}</span>
+						<span>{{oWeight+'kg'}}</span>
+						<span>{{Bust}}-{{Waistline}}-{{Hips}}</span>
+					</p>
+					<p class="person_information_four">
+						<span>{{Household}}</span>
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="editor_data border_box" v-on:click="open_album_main">
+			<h1 class="editor_data_title">个人相册<span >编辑</span></h1>
+			<div class="editor_data_swiper">
+				 <div class="swiper-container" id="swiper-container-editorPhotos">
+        			<div class="swiper-wrapper">
+			             <!--<div class="swiper-slide"><img src="images/nnn.jpg" alt="" /></div>-->
+			        </div>
+			    </div> 
+			</div>
+		</div>
+		<div class="editor_data border_box" v-on:click="open_user_main">
+			<h1 class="editor_data_title">个人简介<span>编辑</span></h1>
+			<p class="editor_data_txt">{{Introduction}}</p>
+		</div>
+
+		<div class="editor_data border_box" v-on:click="open_hobby_main">
+			<h1 class="editor_data_title">技能特长<span>编辑</span></h1>
+			<p class="editor_data_txt">{{oNewTxt_Hobby_main||Specialty}}</p>
+		</div>
+		<div class="editor_data border_box" v-on:click="open_honor_main">
+			<h1 class="editor_data_title">荣誉经历<span>编辑</span></h1>
+			<p class="editor_data_txt">{{oNewTxt_Honor_main||Honor}}</p>
+		</div>
+		<div class="editor_data border_box" v-on:click="open_work_main">
+			<h1 class="editor_data_title">工作经验<span>编辑</span></h1>
+			<div class="editor_data_txt" id="work_oWorkExperience">
+				<p v-for="w in ww">{{w}}</p>
+				<!--{{oNewTxt_Work_Main||oWorkExperience}}-->
+			</div>
+		</div>
+		<div class="editor_data border_box" v-on:click="open_video_main">
+			<h1 class="editor_data_title">个人视频<span>编辑</span></h1>
+
+		</div>
+
+
+
+
+	</section>
+
+	<footer class="editor_footer flexBox footerBtn border_box">
+		<span class="editor_submit tap footerBtn" v-on:click="editor_submit">保存</span>
+	</footer>
+	<!--个人简介页面-->
+		<div id="user_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal flexBox flexBox_column" id="user_main_content">
+			   	<header class="header">
+			   		<span class="icon iconfont goback" v-on:click="Close_user_main">&#xe600;</span>
+			   		个人简介
+			   		<span class="besure" v-on:click="Besure_user_main">确定</span>
+			   	</header>
+			   	<section class="section">
+			   		<div class="weui_cells weui_cells_form">
+						  <div class="weui_cell">
+						    <div class="weui_cell_bd weui_cell_primary">
+						      	<textarea class="weui_textarea" placeholder="请输入个人简介" rows="10" id="Txt_user_main" v-model="oTxt_User_Main" >{{Introduction}}</textarea>
+						        <div class="weui_textarea_counter"><span id="num_user_main">{{oNum_User_Main||0}}</span>/200</div>
+						    </div>
+						  </div>
+					</div>
+			   	</section>
+
+				</div>
+
+		</div>
+
+	<!--技能特长-->
+		<div id="hobby_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal" id="user_main_content">
+			   	<header class="header">
+			   		<span class="icon iconfont goback" v-on:click="Close_hobby_main">&#xe600;</span>
+			   		技能特长
+			   		<span class="besure" v-on:click="Besure_hobby_main">确定</span>
+			   	</header>
+			   	<section class="section">
+			   		<div class="weui_cells weui_cells_form">
+						  <div class="weui_cell">
+						    <div class="weui_cell_bd weui_cell_primary">
+						      	<textarea class="weui_textarea" placeholder="请输入个人技能特长" rows="10" id="Txt_hobby_main" v-model="oTxt_Hobby_main" >{{Specialty}}
+						      	</textarea>
+						        <div class="weui_textarea_counter"><span id="num_Hobby_main">{{oNum_Hobby_main||0}}</span>/200</div>
+						    </div>
+						  </div>
+					</div>
+			   	</section>
+				</div>
+
+		</div>
+
+		<!--荣誉经历-->
+		<div id="honor_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal" id="user_main_content">
+			   	<header class="header">
+			   		<span class="icon iconfont goback" v-on:click="Close_user_main">&#xe600;</span>
+			   		主要荣誉
+			   		<span class="besure" v-on:click="Besure_honor_main">确定</span>
+			   	</header>
+			   	<section class="section">
+			   		<div class="weui_cells weui_cells_form">
+						  <div class="weui_cell">
+						    <div class="weui_cell_bd weui_cell_primary">
+						      	<textarea class="weui_textarea" placeholder="请输入个人荣誉经历" rows="17" id="Txt_honor_main" v-model="oTxt_Honor_Main" >{{Honor}}
+						      	</textarea>
+						        <div class="weui_textarea_counter"><span id="num_honor_main">{{oNum_Honor_Main||0}}</span>/500</div>
+						    </div>
+						  </div>
+					</div>
+			   	</section>
+				</div>
+
+		</div>
+
+		<!--工作经验-->
+		<div id="work_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal" id="user_main_content">
+			   	<header class="header">
+			   		<span class="icon iconfont goback" v-on:click="Close_user_main">&#xe600;</span>
+			   		<h1 class="header_title">工作经验</h1>
+			   		<span class="besure" v-on:click="Besure_work_main">确定</span>
+			   	</header>
+			   	<section class="section">
+			   		<div class="weui_cells weui_cells_form">
+						  <div class="weui_cell">
+						    <div class="weui_cell_bd weui_cell_primary">
+						      	<textarea class="weui_textarea" placeholder="请输入个人工作经验" rows="17" id="Txt_Work_main" v-model="oTxt_Work_Main" >{{oWorkExperience}}
+						      	</textarea>
+						        <div class="weui_textarea_counter"><span id="num_user_main">{{oNum_Work_Main||0}}</span>/2000</div>
+						    </div>
+						  </div>
+					</div>
+			   	</section>
+				</div>
+		</div>
+		<!--个人视频-->
+		<div id="video_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal flexBox flexBox_column">
+			   		<header class="header">
+			   			<span class="icon iconfont goback" v-on:click="Close_video_main">&#xe600;</span>
+			   			个人视频
+			   		</header>
+			   		<section class="section flex" id="swiper_video_list">
+			   			<video v-bind:src="video.VideoUrl"  poster="{{video.Thumbnail}}" v-for="video in videoArry"></video>
+			   		</section>
+			  </div>
+		</div>
+		<!--个人相册-->
+		<div id="album_main" class="weui-popup-container">
+			  <div class="weui-popup-overlay"></div>
+			  <div class="weui-popup-modal flexBox flexBox_column">
+			   		<header class="header">
+			   			<span class="icon iconfont goback" v-on:click="Close_album_main">&#xe600;</span>
+			   			<span class="besure" v-on:click="newAlbum">新增</span>
+			   			相册编辑
+			   		</header>
+			   		<section class="section flex">
+			   			<ul id="album_main_ul">
+			   				<li v-for="pic in albumArry" data-AlbumsID = "{{pic.AlbumsID}}" >
+			   					<img v-bind:src="pic.PhotoPath" v-on:click="go_photos_editor"/>
+			   					<p class="border_box flexBox">
+			   						<span class="flex">{{pic.AlbumsName}}</span>
+			   						<span class="icon iconfont flex editor_album" v-on:click="editor_album">&#xe60a;</span>
+			   						<span class="icon iconfont flex delete_album" v-on:click="delete_album">&#xe608;</span>
+			   					</p>
+			   				</li>
+			   			</ul>
+			   			
+			   		</section>
+			  </div>
+		</div>
+		

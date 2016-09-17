@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title v-text="siteTitle"></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<!--手机顶部的颜色-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--开启对webApp的支持-->
+		<!--清楚浏览器的缓存-->
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="css/app.css"/>
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<!-- iconfont字体库 -->
+		<link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1472957649_1661098.css"/>
+
+	</head>
+	<body data-uploadImg = "" data-PassWord = "" data-seeID = "" data-seeName = "" data-seeImg = "" data-seePho = "" data-userId="" data-UserAccount = "" id="body" data-uploadPhotos = "" data-seeCount = "" data-seePass ="">
+	
+		<!---->
+		<div id="app">
+
+			<!-- 路由外链 -->
+			<router-view></router-view>
+
+
+		</div>
+
+		<script type='text/javascript' src='js/plug/jquery.min.js'></script>
+		<script src="js/plug/sea.js"></script>
+		<script src="js/plug/vue.js"></script>
+		<script src="js/plug/vue-router.min.js"></script>
+		<!--去除IOS点击延迟-->
+		<script src="js/plug/jquery_weui/fastclick.js" type="text/javascript" ></script>
+
+		<script>
+			$(function() {
+			    FastClick.attach(document.body);
+			});
+		</script>
+		<script>
+			var gMain = {
+				//verson:"1.1"
+				verson : (new Date()).getTime() + "" //TODO 开发环境暂时禁用缓存
+
+//				,basePath : "http://192.168.0.233/"
+				,basePath:"http://registe.movmovie.com/"
+			};
+
+			 //seajs配置信息
+			seajs.config({
+				base : "../QiPaiApp/" //seajs的基础路径（组织人事，元数据项目的模块）
+				,
+				charset : 'utf-8',
+				//map : [ [ /^(.*\.(?:css|js|html))(.*)$/i,
+						//'$1?v=_VERSION_' + '-' + gMain.verson ] ] //加上版本号，清缓存用
+				//公共路径
+				//,
+				paths : {
+
+
+				}
+			});
+
+			$(function() {
+				seajs.use([ "js/app.js" ]);
+			});
+		</script>
+	</body>
+</html>

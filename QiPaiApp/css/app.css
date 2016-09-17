@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* reset初始化 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+img{border:0;display: block;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,li{list-style:none;}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+a,input,textarea,select{outline: none;}
+*:focus {outline: none;}
+input,textarea,select{*font-size:100%;}
+input[type="button"],button{border:none;}
+input[type="button"],input[type="text"]{-webkit-appearance: none;}
+em,b{font-style:normal}
+a{text-decoration:none}
+.clearfix:after{ visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0;} /* 清除浮动    */
+
+/*页面基础配置*/
+html{overflow: hidden;}
+body{font-family: Helvetica Neue, Helvetica, STHeiTi, sans-serif;font-size: 0.14rem;}/*设置手机库字体以及普通尺寸大小*/
+html,body,#app{width: 100%;height: 100%;}
+#app>div{width: 100%;height: 100%;}
+
+/**以下是常用类的使用*/
+.tap{-webkit-tap-highlight-color: transparent;}  /*设置背景点击时为透明背景*/
+.header{height: 0.44rem;line-height: 0.44rem;text-align: center;position:relative;width: 100%;z-index: 9;background: #313c42; color:rgba(255,255,255,0.6);}
+.goback{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.44rem;
+    height: 100%;
+    text-align: center;
+    line-height: 0.44rem;
+    font-size: 0.24rem!important;
+}
+.besure{
+    position: absolute;
+    display: block;
+    width: 0.44rem;
+    text-align: center;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+.footerBtn{height: 0.5rem;width: 100%;text-align: center;line-height: 0.5rem;}
+.section{
+    overflow: auto;
+}
+.clearBoth{display: block;  clear: both;} /* 清除浮动    */
+.flexBox{ /*设置为弹性盒*/
+    display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -moz-box; /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox; /* 混合版本语法: IE 10 */
+    display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+    display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+}
+.flexBox_row{/*设置弹性盒模型横向布局*/
+   -webkit-box-direction: normal;
+   -webkit-box-orient: horizontal;
+   -moz-flex-direction: row;
+   -webkit-flex-direction: row;
+   flex-direction: row!important;
+}
+.flexBox_column{/*设置弹性盒模型纵向布局*/
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.flex{/*设置弹性盒分配*/
+    flex: 1;
+    -webkit-flex: 1;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+}
+.border_box{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}

@@ -1,0 +1,92 @@
+.certification footer{
+	background: deeppink;
+	color: #fff;
+}
+.certification_list{
+	height: 0.4rem;
+	line-height: 0.4rem;
+	width: 100%;
+	border-bottom: 0.005rem solid #ddd;
+	padding:0 0.1rem;
+	position: relative;
+}
+.certification_list>span{
+	/*position: absolute;*/
+	left: 0;
+	display: block;
+	height: 100%;
+	width: 0.8rem;
+	/*padding-left: 0.2rem;*/
+	
+}
+.certification_title{
+	text-align: center;
+	
+}
+.certification_input{
+	border: none;
+}
+.certification_camera{
+	padding:0.1rem 0.1rem;
+	font-size: 0.14rem;
+}
+.certification_camera_title{
+	height: 0.24rem;
+	line-height: 0.24rem;
+	z-index: 99;
+}
+.certification_camera_info{
+	font-size: 0.12rem;
+	color: rgba(0,0,0,0.6);
+	height: 0.16rem;
+	line-height: 0.16rem;
+}
+.weui_cells:before,.weui_cells:after{
+	border: none!important;
+}
+.weui_cell{
+	padding-left: 0!important;
+}
+.certification_camera_photos{
+	width: 100%;
+	/*height: 2rem;*/
+	background: gray;
+	margin: 0.1rem 0;
+}
+.certification_camera_photos img{
+	width: 100%;
+	/*height: 100%;*/
+}
+#certification_sex{
+	border: none;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 2;
+}
+.certification_sex_title{
+	text-align: center;
+}
+.title{
+	padding: 0 0.2rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	align-items: center;
+	justify-content: center;
+}
+.title i{padding-right: 0.2rem;line-height: 0.4rem;}
+
+
+.agreement_con>h1{
+	font-weight: bold;
+	font-size: 0.16rem;
+}
+.agreement_con>p{
+	text-indent: 2em;
+
+}
+.title_agree{
+	text-indent:2em;
+}

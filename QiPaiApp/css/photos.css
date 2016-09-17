@@ -1,0 +1,8 @@
+#photosList{position: relative;width: 100%;}
+#photosList .header{width: 100%;text-align: center;}
+#photosList .footerBtn{background: #313c42;color: #ccc}
+.photosList_content{background: #000;}
+.photosList_content .swiper-slide img{width: 100%;
+    z-index: 999;
+    /*left: 0;right: 0;bottom: 0;top: 0;margin: auto;*/
+}

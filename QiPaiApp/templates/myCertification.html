@@ -1,0 +1,95 @@
+<div class="certification flexBox flexBox_column" id="certification">
+	<header class="header">
+		<span class="goback icon iconfont tap" v-on:click="GoBack">&#xe600;</span>认证信息
+	</header>
+
+	<section class="section flex">
+		<div class="certification_list border_box flexBox flexBox_row" v-on:click="">
+			<span>真实姓名</span>
+			<h1 class="certification_title flex " id="RealName">{{RealName}}</h1>
+		</div>
+		<div class="certification_list border_box flexBox flexBox_row" v-on:click="" id="certification_sex1">
+			<span>性别</span>
+			<h1 class="certification_sex_title flex" id="UserSex">{{oSex}}</h1>
+		</div>
+		<div class="certification_list border_box flexBox flexBox_row">
+			<span>身份证号</span>
+			<input type="text"  value="" placeholder="{{Identity}}" class="certification_title flex certification_input" id="Identity" disabled="disabled" />
+		</div>
+		<div class="certification_list border_box flexBox flexBox_row">
+			<span>签约公司</span>
+			<input type="text"  value="" placeholder="{{Company}}" class="certification_title flex certification_input" id="Company" disabled="disabled"/>
+		</div>
+		<div class="certification_list border_box flexBox flexBox_row">
+			<span>经纪人电话</span>
+			<input type="tel"  value="" placeholder="{{Telephone}}" class="certification_title flex certification_input" id="UserPhone" disabled="disabled"/>
+		</div>
+		<!--拍照-->
+		<div class="certification_camera">
+			<p class="certification_camera_title">上传持证照</p>
+			<div class="certification_camera_photos" id="certification_camera_photos" />
+			<div class="OpenCamera_url" v-on:click="">
+				<img v-bind:src="ImgSrc" id="cameraUrl" />
+			</div>
+			
+		</div>
+
+		<p class="certification_camera_title">上传持证照如下：</p>
+		<ol>
+			<li class="certification_camera_info">1.持证正面照须本人手持证件，免冠未妆能辨识</li>
+			<li class="certification_camera_info">2.证件上/信息/号码/住址须清晰可见</li>
+			<li class="certification_camera_info">3.照片大小5M以内</li>
+		</ol>
+		
+		<p class="title flexBox">
+			<i class="weui_icon_success" style="font-size:23px;" v-on:click=""></i>
+			<span class="" style="line-height: 0.45rem;" v-on:click="">我已同意企拍人才建档协议</span>
+		</p>
+		
+</div>
+
+</section>
+
+<!--<footer class="footerBtn" v-on:click="GoNext">下一步</footer>-->
+<!--选择性别-->
+	<div id="choose_yoursex" class="weui-popup-container popup-bottom">
+		<div class="weui-popup-overlay"></div>
+		<div class="weui-popup-modal">
+			
+				<div class="toolbar">
+					<div class="toolbar-inner">
+						<a href="javascript:;" class="picker-button " v-on:click="sex_close">关闭</a>
+						<h1 class="title">请选择你的性别</h1>
+					</div>
+				</div>
+				<div class="modal-content">
+					<div id="data_sex" style="padding: 0.2rem 0;">
+						<p class="title flexBox" v-on:click="select_sex">
+							<i class=" weui_icon_circle" style="font-size:23px;"></i>
+							<span class="flex" style="line-height: 0.45rem;">男</span>
+						</p>
+						<p class="title flexBox" v-on:click="select_sex">
+							<i class=" weui_icon_circle" style="font-size:23px;"></i>
+							<span class="flex" style="line-height: 0.45rem;">女</span></p>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+
+<!--协议-->
+	<div id="agreement" class="weui-popup-container">
+	  <div class="weui-popup-overlay"></div>
+	  <div class="weui-popup-modal flexBox flexBox_column ">
+	  	<header class="header">
+	  		<span class="icon iconfont goback" v-on:click="close_agreement">&#xe600;</span>
+	  		企拍人才建档协议
+	  	</header>
+	    <section class="agreement_con flex section">
+	    	这是协议内容区
+	    </section>
+	  </div>
+	</div>
+
+
+</div>

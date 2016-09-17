@@ -1,0 +1,23 @@
+<div class="photosList flexBox flexBox_column" id="photosList">
+
+	<!--头部-->
+	<div class="header">
+		<span class="icon iconfont goback" v-on:click="goback">&#xe600;</span>
+		<span class="photosList_num">{{photosList_num||1}}</span>
+		<span>/</span>
+		<span class="photosList_numAll">{{photosList_numAll}}</span>
+
+	</div>
+	<!--内容区-->
+	<div class="photosList_content flex flexBox" id="photosList_content">
+		<!-- Swiper -->
+		<div class="swiper-container flex flexBox" id="xiangce">
+			<div class="swiper-wrapper">
+			</div>
+		</div>
+	</div>
+	<!--底部-->
+	<div class="footerBtn" id="PhotoDesc">
+		<p>这是一段文字介绍</p>
+	</div>
+</div>

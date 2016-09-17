@@ -1,0 +1,16 @@
+<div class="album flexBox_column flexBox" id="album">
+	<header class="header">
+		<span class="icon iconfont goback" v-on:click="GoIndex">&#xe600;</span>
+		所有相册
+	</header>
+	<section class="album_content" id="">
+		<!--相册列表-->
+		<ul class="album_all" id="album_List">
+			<li class=" border_box float_left xiangce_list" v-for="album in albums" v-on:click="GoPhotos" data-AlbumsID = "{{album.AlbumsID}}">
+				<img v-bind:src="album.PhotoPath"/>
+				<p>{{album.AlbumsName}}</p>
+			</li>
+		</ul>
+	</section>
+
+</div>
